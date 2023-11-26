@@ -1,0 +1,21 @@
+#Method 1:
+def removeDuplicates(self, nums: List[int]) -> int:
+        i=1
+        while i < len(nums):
+            if(nums[i]==nums[i-1]):
+               nums.pop(i)
+            else:
+                i+=1 
+#Method 2:
+    def removeDuplicates(self, nums: List[int]) -> int:
+        current,next=0,1
+        while(next in range(len(nums))):
+            if nums[current]==nums[next]:
+                next+=1
+            else:
+                nums[current+1]=nums[next]
+                next+=1
+                current+=1
+        return current+1
+nums=[1,1,2,3,4,4,4,5,5,6]
+        
